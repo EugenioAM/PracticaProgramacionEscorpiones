@@ -12,11 +12,17 @@ namespace ProgramacionEscorpiones
 {
     public partial class Form3 : Form
     {
+        Usuario usuario_activo = new Usuario();
+
         public Form3()
         {
             InitializeComponent();
+            usuario_activo.setId(22);
         }
 
-       
+        
+        
+        
+        
     }
 }
