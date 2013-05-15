@@ -44,6 +44,7 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "usuario";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
@@ -53,6 +54,7 @@
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "password";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // button1
             // 
