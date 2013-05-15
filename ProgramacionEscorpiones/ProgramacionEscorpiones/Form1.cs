@@ -15,6 +15,10 @@ namespace ProgramacionEscorpiones
         public Form1()
         {
             InitializeComponent();
+            Autor autor = new Autor();
+            
         }
+
+        
     }
 }
