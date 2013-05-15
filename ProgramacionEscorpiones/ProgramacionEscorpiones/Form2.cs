@@ -19,20 +19,21 @@ namespace ProgramacionEscorpiones
 
         private void textBox1_Click(object sender, EventArgs e)
         {
+
             textBox1.Text = "";
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_Click(object sender, EventArgs e)
         {
             textBox2.Text = "";
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void textBox3_Click(object sender, EventArgs e)
         {
             textBox3.Text="";
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void textBox4_Click(object sender, EventArgs e)
         {
             textBox4.Text = "";
         }

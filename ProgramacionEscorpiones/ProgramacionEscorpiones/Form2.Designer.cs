@@ -56,7 +56,7 @@
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "PASSWORD";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox3
             // 
@@ -66,7 +66,7 @@
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "CONFIRMAR-PASS";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox4
             // 
@@ -76,7 +76,7 @@
             this.textBox4.TabIndex = 4;
             this.textBox4.Text = "E-MAIL";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // button1
             // 
