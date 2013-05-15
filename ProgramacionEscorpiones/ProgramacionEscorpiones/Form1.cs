@@ -48,7 +48,7 @@ namespace ProgramacionEscorpiones
 
             }
 
-            Autor autor = new Autor();
+            
 
         }
 
@@ -72,7 +72,7 @@ namespace ProgramacionEscorpiones
         private void button1_Click(object sender, EventArgs e)
         {
 
-
+            Hide();
             Form3 principal = new Form3();
             principal.Show();
         }
