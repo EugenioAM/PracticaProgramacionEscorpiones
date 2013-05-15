@@ -43,12 +43,26 @@ namespace ProgramacionEscorpiones
                 conexion.Open();
 
             }
-            catch (Exception) { }
+            catch (MySqlException ex)
+            {
+                //para controlar los posibles fallos del mysql
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("No se puede conectar al servidor.  Contactar al administrador");
+                        break;
+
+                    case 1045:
+                        MessageBox.Show("Nombre/contraseña incorrecta, intente de nuevo");
+                        break;
+                }
+
+            }
 
 
         }
 
-     
+
 
 
 
@@ -76,11 +90,14 @@ namespace ProgramacionEscorpiones
                                                                                                                                              + textBox1.Text + "','"
                                                                                                                                              + "CURTIME()" + "','"
                                                                                                                                              + "CURDATE()" + "','"
-                                                                                                                                             +" CURTIME()";
+                                                                                                                                             + " CURTIME()";
             conexion.Close();
             conexion.Open();
             comando = new MySqlCommand(sentenciaSQL, conexion);
             comando.ExecuteNonQuery();
+
+
+            //MessageBox.Show("OLA");
 
 
         }
@@ -90,6 +107,12 @@ namespace ProgramacionEscorpiones
             Hide();
             Form1 Index = new Form1();
             Index.Show();
+        }
+
+        private void Form2_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();
         }
 
 

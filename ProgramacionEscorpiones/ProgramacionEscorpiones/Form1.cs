@@ -54,9 +54,12 @@ namespace ProgramacionEscorpiones
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             Hide();
-            Form3 Registrar = new Form3();
+            Form2 Registrar = new Form2();
             Registrar.Show();
+           
+
         }
 
         private void textBox1_Click(object sender, EventArgs e)
@@ -72,9 +75,15 @@ namespace ProgramacionEscorpiones
         private void button1_Click(object sender, EventArgs e)
         {
 
+
             Hide();
             Form3 principal = new Form3();
             principal.Show();
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
 
