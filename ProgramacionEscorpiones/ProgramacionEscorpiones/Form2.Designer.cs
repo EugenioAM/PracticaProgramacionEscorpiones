@@ -46,6 +46,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "ALIAS";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
@@ -55,6 +56,7 @@
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "PASSWORD";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -64,6 +66,7 @@
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "CONFIRMAR-PASS";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -73,6 +76,7 @@
             this.textBox4.TabIndex = 4;
             this.textBox4.Text = "E-MAIL";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button1
             // 
@@ -82,6 +86,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "ACEPTAR";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -91,6 +96,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "<--";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 

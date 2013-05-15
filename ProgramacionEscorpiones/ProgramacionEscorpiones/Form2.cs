@@ -17,6 +17,38 @@ namespace ProgramacionEscorpiones
             InitializeComponent();
         }
 
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text="";
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            textBox4.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form1 Index = new Form1();
+            Index.Show();
+        }
+
         
     }
 }

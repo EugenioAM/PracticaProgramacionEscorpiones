@@ -19,6 +19,13 @@ namespace ProgramacionEscorpiones
             
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form2 Registrar = new Form2();
+            Registrar.Show();
+        }
+
         
     }
 }
