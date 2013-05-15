@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxNuevoAlias = new System.Windows.Forms.TextBox();
+            this.textBoxPw = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBoxNuevoAlias
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Nuevo Alias";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxNuevoAlias.Location = new System.Drawing.Point(43, 31);
+            this.textBoxNuevoAlias.Name = "textBoxNuevoAlias";
+            this.textBoxNuevoAlias.Size = new System.Drawing.Size(187, 20);
+            this.textBoxNuevoAlias.TabIndex = 0;
+            this.textBoxNuevoAlias.Text = "Nuevo Alias";
+            this.textBoxNuevoAlias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxNuevoAlias.Click += new System.EventHandler(this.textBox1_click);
             // 
-            // textBox2
+            // textBoxPw
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(187, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "Contraseña";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPw.Location = new System.Drawing.Point(43, 57);
+            this.textBoxPw.Name = "textBoxPw";
+            this.textBoxPw.Size = new System.Drawing.Size(187, 20);
+            this.textBoxPw.TabIndex = 1;
+            this.textBoxPw.Text = "Contraseña";
+            this.textBoxPw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPw.Click += new System.EventHandler(this.textBox2_click);
             // 
             // button1
             // 
@@ -60,6 +62,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -78,8 +81,8 @@
             this.ClientSize = new System.Drawing.Size(275, 139);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPw);
+            this.Controls.Add(this.textBoxNuevoAlias);
             this.Name = "Form4";
             this.Text = "Form4";
             this.ResumeLayout(false);
@@ -89,8 +92,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxNuevoAlias;
+        private System.Windows.Forms.TextBox textBoxPw;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

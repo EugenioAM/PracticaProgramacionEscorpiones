@@ -8,6 +8,5 @@ namespace ProgramacionEscorpiones
 {
     class adri
     {
-        int joder;
-    }
+        int joder;     }
 }
