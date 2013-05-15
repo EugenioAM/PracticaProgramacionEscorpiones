@@ -26,6 +26,17 @@ namespace ProgramacionEscorpiones
             Registrar.Show();
         }
 
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            //aceptar
+            Hide();
+            Form3 Registrar = new Form3();
+            Registrar.Show();
+
+
+        }
+
         
     }
 }
+

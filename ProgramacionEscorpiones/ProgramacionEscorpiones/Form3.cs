@@ -20,6 +20,38 @@ namespace ProgramacionEscorpiones
             usuario_activo.setId(22);
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //acceso ventana configuracion
+            Hide();
+            Form7 Registrar = new Form7();
+            Registrar.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //boton añadir autor
+            Hide();
+            Form8 Registrar = new Form8();
+            Registrar.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            //ventana añadir autor
+            Hide();
+            Form8 Registrar = new Form8();
+            Registrar.Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Hide();
+            Form7 Registrar = new Form7();
+            Registrar.Show();
+        }
+
+
         
         
         
