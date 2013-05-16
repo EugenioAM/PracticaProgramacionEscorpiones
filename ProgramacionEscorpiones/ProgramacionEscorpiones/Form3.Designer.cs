@@ -98,7 +98,7 @@
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Mistral", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(126, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(387, 23);
@@ -162,6 +162,7 @@
             // 
             // label5
             // 
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(129, 106);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(372, 338);
@@ -173,6 +174,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProgramacionEscorpiones.Properties.Resources.imagen1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(513, 453);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button3);
