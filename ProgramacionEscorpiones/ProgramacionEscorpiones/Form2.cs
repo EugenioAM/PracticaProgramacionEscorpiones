@@ -82,15 +82,32 @@ namespace ProgramacionEscorpiones
                 id_usuario_maximo++;
             }
 
-            //Creamos la cadena de inserción que es un String formado concatenado las distintas partes que leemos de los textbox
-            sentenciaSQL = "INSERT INTO usuarios" + "(id_usuario, email, pw, alias, hora_alta, fecha_alta, ultima_conexion)" + "VALUES ('"
-                                                                                                                                             + id_usuario_maximo + "','"
-                                                                                                                                             + textBox4.Text + "','"
-                                                                                                                                             + textBox2.Text + "','"
-                                                                                                                                             + textBox1.Text + "','"
-                                                                                                                                             + "CURTIME()" + "','"
-                                                                                                                                             + "CURDATE()" + "','"
-                                                                                                                                             + " CURTIME()";
+
+            /*Por si se usa en un futuro-------- DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");*/
+            /*
+             *  string date = "30/07:2012 15:54:22";
+            DateTime time;
+            DateTime.TryParse(date, out time);
+            string s = string.Format("select * from customers where EntryDate='{0}'", date);
+             * 
+             * 
+             * /if your date format in db is like MM/dd/yyyy do:
+             *string strDate = dateTimePicker1.Value.ToString("MM/dd/yyyy"); //change format accordinlgy to your format in DB!
+             
+             
+             
+             
+             */
+
+            sentenciaSQL = "INSERT INTO sql28127.usuarios" +
+                "(id_usuario, email, pw, alias, hora_alta, fecha_alta, ultima_conexion)" + "VALUES ('"
+                        + id_usuario_maximo + "','"
+                        + textBox4.Text.ToString() + "','"
+                        + textBox2.Text.ToString() + "','"
+                        + textBox1.Text.ToString() + "','"
+                        + DateTime.Now.ToString("HH:mm:ss") + "','"
+                        + DateTime.Now.ToString("yyyy-MM-dd") + "','"
+                        + DateTime.Now.ToString("yyyy-MM-dd") + "')";
             conexion.Close();
             conexion.Open();
             comando = new MySqlCommand(sentenciaSQL, conexion);
