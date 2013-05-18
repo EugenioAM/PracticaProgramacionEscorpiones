@@ -111,7 +111,21 @@ namespace ProgramacionEscorpiones
             conexion.Close();
             conexion.Open();
             comando = new MySqlCommand(sentenciaSQL, conexion);
-            comando.ExecuteNonQuery();
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+
+          catch (MySqlException ex){
+              switch (ex.Number){
+                  case 1062:
+                      MessageBox.Show("texto repetido BBDD erronea, hay que cambiar cosas");
+                      break;
+                  default:
+              MessageBox.Show(ex.ToString()/*para poder controlar los errores asi veo como salen*/);
+                      break;
+            }
+          }
 
 
             //MessageBox.Show("OLA");
