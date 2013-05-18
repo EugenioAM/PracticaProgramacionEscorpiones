@@ -34,6 +34,7 @@ namespace ProgramacionEscorpiones
         MySqlDataReader resultado;
 
 
+
         ComprobarMail util = new ComprobarMail();
 
         public Form2()
@@ -67,105 +68,6 @@ namespace ProgramacionEscorpiones
 
         }
 
-
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-
-     
-
-
-        {
-            if (util.IsValidEmail(textBox4.Text.ToString()))
-            {
-                MessageBox.Show("Valid", textBox4.Text.ToString());
-                //Primero obtengo la clave primaria más alta almacenada en la tabla de jugadores
-                //En id_jugador_maximo guardaré el resultado de la query para saber cuál es el MAX id de jugador en la tabla
-                int id_usuario_maximo = 0;
-                sentenciaSQL = "Select MAX(id_usuario) from sql28127.usuarios";
-                comando = new MySqlCommand(sentenciaSQL, conexion);
-                resultado = comando.ExecuteReader();
-                if (resultado.Read())
-                {
-                    id_usuario_maximo = resultado.GetInt32(0);
-                    id_usuario_maximo++;
-                }
-
-
-                /*Por si se usa en un futuro-------- DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");*/
-                /*
-                 *  string date = "30/07:2012 15:54:22";
-                DateTime time;
-                DateTime.TryParse(date, out time);
-                string s = string.Format("select * from customers where EntryDate='{0}'", date);
-                 * 
-                 * 
-                 * /if your date format in db is like MM/dd/yyyy do:
-                 *string strDate = dateTimePicker1.Value.ToString("MM/dd/yyyy"); //change format accordinlgy to your format in DB!
-             
-             
-             
-             
-                 */
-
-                sentenciaSQL = "INSERT INTO sql28127.usuarios" +
-                    "(id_usuario, email, pw, alias, hora_alta, fecha_alta, ultima_conexion)" + "VALUES ('"
-                            + id_usuario_maximo + "','"
-                            + textBox4.Text.ToString() + "','"
-                            + textBox2.Text.ToString() + "','"
-                            + textBox1.Text.ToString() + "','"
-                            + DateTime.Now.ToString("HH:mm:ss") + "','"
-                            + DateTime.Now.ToString("yyyy-MM-dd") + "','"
-                            + DateTime.Now.ToString("yyyy-MM-dd") + "')";
-                conexion.Close();
-                conexion.Open();
-                comando = new MySqlCommand(sentenciaSQL, conexion);
-                try
-                {
-                    comando.ExecuteNonQuery();
-                }
-
-                catch (MySqlException ex)
-                {
-                    switch (ex.Number)
-                    {
-                        case 1062:
-                            MessageBox.Show("Alias o Email EN USO");
-                            break;
-                        default:
-                            MessageBox.Show(ex.ToString()/*para poder controlar los errores asi veo como salen*/);
-                            break;
-                    }
-                }
-
-
-                //MessageBox.Show("OLA");
-
-
-            }
-            else
-            {
-               MessageBox.Show("Correo Invalido");
-            }
-
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Hide();
-            Form1 Index = new Form1();
-            Index.Show();
-        }
-
-        private void Form2_Click(object sender, EventArgs e)
-        {
-
-            Application.Exit();
-        }
-
         private void textBox1_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -184,6 +86,102 @@ namespace ProgramacionEscorpiones
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string str1 = textBox2.Text.ToString();
+            string str2 = textBox3.Text.ToString();
+            if (str1 == str2)
+            {
+                if (util.IsValidEmail(textBox4.Text.ToString()))
+                {
+                    MessageBox.Show("Datos Validos");
+
+
+                    //Primero obtengo la clave primaria más alta almacenada en la tabla de jugadores
+                    //En id_jugador_maximo guardaré el resultado de la query para saber cuál es el MAX id de jugador en la tabla
+                    int id_usuario_maximo = 0;
+                    sentenciaSQL = "Select MAX(id_usuario) from sql28127.usuarios";
+                    comando = new MySqlCommand(sentenciaSQL, conexion);
+                    resultado = comando.ExecuteReader();
+                    if (resultado.Read())
+                    {
+                        id_usuario_maximo = resultado.GetInt32(0);
+                        id_usuario_maximo++;
+                    }
+
+
+                    /*Por si se usa en un futuro-------- DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");*/
+                    /*
+                     *  string date = "30/07:2012 15:54:22";
+                    DateTime time;
+                    DateTime.TryParse(date, out time);
+                    string s = string.Format("select * from customers where EntryDate='{0}'", date);
+                     * 
+                     * 
+                     * /if your date format in db is like MM/dd/yyyy do:
+                     *string strDate = dateTimePicker1.Value.ToString("MM/dd/yyyy"); //change format accordinlgy to your format in DB!
+             
+             
+             
+             
+                     */
+
+                    sentenciaSQL = "INSERT INTO sql28127.usuarios" +
+                        "(id_usuario, email, pw, alias, hora_alta, fecha_alta, ultima_conexion)" + "VALUES ('"
+                                + id_usuario_maximo + "','"
+                                + textBox4.Text.ToString() + "','"
+                                + textBox2.Text.ToString() + "','"
+                                + textBox1.Text.ToString() + "','"
+                                + DateTime.Now.ToString("HH:mm:ss") + "','"
+                                + DateTime.Now.ToString("yyyy-MM-dd") + "','"
+                                + DateTime.Now.ToString("yyyy-MM-dd") + "')";
+                    conexion.Close();
+                    conexion.Open();
+                    comando = new MySqlCommand(sentenciaSQL, conexion);
+                    try
+                    {
+                        comando.ExecuteNonQuery();
+                    }
+
+                    catch (MySqlException ex)
+                    {
+                        switch (ex.Number)
+                        {
+                            case 1062:
+                                MessageBox.Show("Alias o Email EN USO");
+                                break;
+                            default:
+                                MessageBox.Show(ex.ToString());/*para poder controlar los errores asi veo como salen*/
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Correo Invalido");
+                }
+
+            }
+            else
+            {
+
+                MessageBox.Show("Contraseñas diferentes");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();//-----------NO TERMINA DE CERRARSE SI LE DAS AL BOTON DE ATRAS!! HAY QUE INVESTIGAR
+            Form1 Index = new Form1();
+            Index.Show();
+        }
+
+        private void Form2_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();
+        }
 
     }
 }
