@@ -56,6 +56,7 @@ namespace ProgramacionEscorpiones
         {
 
             Hide();
+          //  MessageBox.Show(""+textBox2.Text.ToString());  Muestra la contraseña, muestra que se oculta la pass pero no cambia de valor
             Form2 Registrar = new Form2();
             Registrar.Show();
            
@@ -69,7 +70,14 @@ namespace ProgramacionEscorpiones
 
         private void textBox2_Click(object sender, EventArgs e)
         {
+            
+            // Se pone a blancos
             textBox2.Text = "";
+            // Se muestra el texto escrito como asteriscos
+            textBox2.PasswordChar = '*';
+            // Dejara un maximo de 30 caracteres al igual que la BBDD
+            textBox2.MaxLength = 30;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,6 +93,8 @@ namespace ProgramacionEscorpiones
         {
             Application.Exit();
         }
+
+       
 
 
     }
