@@ -54,39 +54,49 @@ namespace ProgramacionEscorpiones
 
         private void textBox2_click(object sender, EventArgs e)
         {
-            textBoxNuevoAlias.Text = "";
-            sentenciaSQL = "UPDATE usuarios SET pw=" + textBoxPw.Text +"where id_usuario=" + usuario_activo.getId() +";";
+            //textBoxNuevoAlias.Text = "";
+            //sentenciaSQL = "UPDATE usuarios SET pw=" + textBoxPw.Text +"where id_usuario=" + usuario_activo.getId() +";";
 
-            comando = new MySqlCommand(sentenciaSQL, conexion);
-            resultado = comando.ExecuteReader();
+            //comando = new MySqlCommand(sentenciaSQL, conexion);
+            //resultado = comando.ExecuteReader();
+
+
+          
+
+            // Se pone a blancos
+            textBoxPw.Text = "";
+            // Se muestra el texto escrito como asteriscos
+            textBoxPw.PasswordChar = '•';
+            // Dejara un maximo de 30 caracteres al igual que la BBDD
+            textBoxPw.MaxLength = 30;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string password="";
-             sentenciaSQL = "SELECT pw FROM usuarios WHERE pw=" + textBoxPw.Text + "where id_usuario=" + usuario_activo.getId() + ";";
-            comando = new MySqlCommand(sentenciaSQL, conexion);
-            resultado = comando.ExecuteReader();
 
-            if (resultado.Read())
+            string alias = textBoxNuevoAlias.Text.ToString();
+            string confirm = textBox1.Text.ToString();
+            if (alias == confirm) 
             {
-                 sentenciaSQL = "UPDATE usuarios SET alias=" + textBoxNuevoAlias.Text + "where id_usuario=" + usuario_activo.getId() + ";";
-            comando = new MySqlCommand(sentenciaSQL, conexion);
-            resultado = comando.ExecuteReader();
-            if (resultado.Read()) 
+                if (textBoxPw.Text == usuario_activo.getPw())
+                {
+                    sentenciaSQL = "UPDATE usuarios SET alias=" + textBoxNuevoAlias.Text + "where id_usuario=" + usuario_activo.getId() + ";";
+                    comando = new MySqlCommand(sentenciaSQL, conexion);
+                    resultado = comando.ExecuteReader();
+
+                }
+                else
+                {
+                    MessageBox.Show("Este Alias ya Existe");
+                }
+            
+            }
+            else
             {
-
+                MessageBox.Show("Comprobar Alias");
             }
-            }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -96,8 +106,15 @@ namespace ProgramacionEscorpiones
         private void button2_Click(object sender, EventArgs e)
         {
             Hide();
-            Form1 Index = new Form1();
-            Index.Show();
+            Form7 configur = new Form7();
+            configur.Show();
+        }
+
+        private void textBox1_Click_1(object sender, EventArgs e)
+        {
+
+            textBox1.Text = "";
+
         }
     }
 }
