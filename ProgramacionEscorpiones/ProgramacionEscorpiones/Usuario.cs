@@ -9,7 +9,7 @@ namespace ProgramacionEscorpiones
     class Usuario
     {
         int id;
-        string email, pw, alias, fecha_alta,hora_alta, ultima_conexion;
+        string email, pw, alias, fecha_alta, ultima_conexion;
 
         public Usuario(){}
 
@@ -52,19 +52,6 @@ namespace ProgramacionEscorpiones
         { 
             this.fecha_alta = fecha_alta;
         }
-
-        // hora_alta
-        public string getHora_alta()
-        {
-            return this.hora_alta;
-        }
-
-        public void setHora_alta(string hora_alta)
-        {
-            this.hora_alta = hora_alta;
-        }
-
-
 
         // ultima_conexion
         public string getUltima_conexion()
