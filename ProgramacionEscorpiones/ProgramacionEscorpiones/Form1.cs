@@ -16,6 +16,7 @@ namespace ProgramacionEscorpiones
     public partial class Form1 : Form
     {
 
+        Usuario usuario_activo;
 
         public Form1()
         {
@@ -35,6 +36,14 @@ namespace ProgramacionEscorpiones
                 int contador = 0;
                 while (resultado.Read())
                 {
+                    usuario_activo.setId(resultado.GetInt32("id_usuario"));
+                    usuario_activo.setEmail(resultado.GetString("email"));
+                    usuario_activo.setPw(resultado.GetString("pw"));
+                    usuario_activo.setAlias(resultado.GetString("alias"));
+                    usuario_activo.setHora_alta(resultado.GetString("hora_alta"));
+                    usuario_activo.setFecha_alta(resultado.GetString("fecha_alta"));
+                    usuario_activo.setultima_conexion(resultado.GetString("ultima_conexion"));
+
                     contador += 1;
                     //abre la conexion y confirma la conexion y contraseña el contador sera 1, si esta repetida te pondra el contado a 2 
                 }
