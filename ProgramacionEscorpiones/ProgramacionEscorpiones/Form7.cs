@@ -19,7 +19,7 @@ namespace ProgramacionEscorpiones
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //cambiar nombre
+            // botón cambiar nombre
             Hide();
             Form4 Registrar = new Form4();
             Registrar.Show();
@@ -27,7 +27,7 @@ namespace ProgramacionEscorpiones
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //cambiar pass
+            // botón cambiar pass
             Hide();
             Form6 Registrar = new Form6();
             Registrar.Show();
@@ -36,11 +36,20 @@ namespace ProgramacionEscorpiones
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //cambiar mail
+            //botón cambiar mail
             Hide();
             Form5 Registrar = new Form5();
             Registrar.Show();
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Volver a la ventana principal , Botón aceptar
+
+            Hide();
+            Form3 Aceptar = new Form3();
+            Aceptar.Show();
         }
     }
 }
