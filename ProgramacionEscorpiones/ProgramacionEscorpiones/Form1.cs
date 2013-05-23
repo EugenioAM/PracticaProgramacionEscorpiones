@@ -15,7 +15,7 @@ namespace ProgramacionEscorpiones
 {
     public partial class Form1 : Form
     {
-        Usuario usuario_activo = new Usuario;
+        Usuario usuario_activo = new Usuario();
 
         public Form1()
         {

@@ -20,8 +20,23 @@ namespace ProgramacionEscorpiones
         private void button2_Click(object sender, EventArgs e)
         {
             Hide();
-            Form1 Index = new Form1();
-            Index.Show();
+            Form7 configur = new Form7();
+            configur.Show();
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+        }
+
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
         }
     }
 }

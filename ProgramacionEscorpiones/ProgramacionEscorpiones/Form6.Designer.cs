@@ -52,6 +52,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "ANTIGUO-PASS";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
@@ -61,6 +62,7 @@
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "NUEVO PASS";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox3
             // 
@@ -70,6 +72,7 @@
             this.textBox3.TabIndex = 3;
             this.textBox3.Text = "REPETIR-PASS";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             // 
             // button2
             // 

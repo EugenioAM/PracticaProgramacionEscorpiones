@@ -77,13 +77,13 @@ namespace ProgramacionEscorpiones
                 }
                 else
                 {
-                    MessageBox.Show("este correo ya existe");
+                    MessageBox.Show("Este correo ya existe");
                 }
             }
 
             else
             {
-                MessageBox.Show("comprobar correo");
+                MessageBox.Show("Comprobar correo");
             }
         }
                 
