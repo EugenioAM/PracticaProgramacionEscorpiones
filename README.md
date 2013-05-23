@@ -6,12 +6,12 @@ twiits sin  tener que hacerse twiiter.
 Grupo compuesto por:
 ===============================
 
-Eugenio Álvarez 
+[Eugenio Álvarez](https://github.com/EugenioAM)
 
-Pablo Dubiquin
+[Pablo Dubiquin](https://github.com/pablodubikin)
 
-Adrian Martínez
+[Adrian Martínez](https://github.com/AdrianMS)
 
-Jorge Prieto
+[Jorge Prieto](https://github.com/JorgePrieto)
 
-Javi Gonzalez
+[Javi Gonzalez](https://github.com/Javigv7)
