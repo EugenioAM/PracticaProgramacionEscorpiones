@@ -35,8 +35,13 @@ namespace ProgramacionEscorpiones
                 int contador = 0;
                 while (resultado.Read())
                 {
-
+                    contador += 1;
+                    //abre la conexion y confirma la conexion y contraseña el contador sera 1, si esta repetida te pondra el contado a 2 
+                }
+                if (contador == 1)
+                {
                     usuario_activo.setId(resultado.GetInt32("id_usuario"));
+                    MessageBox.Show(""+usuario_activo.getId());
                     usuario_activo.setEmail(resultado.GetString("email"));
                     usuario_activo.setPw(resultado.GetString("pw"));
                     usuario_activo.setAlias(resultado.GetString("alias"));
@@ -44,11 +49,6 @@ namespace ProgramacionEscorpiones
                     usuario_activo.setFecha_alta(resultado.GetString("fecha_alta"));
                     usuario_activo.setultima_conexion(resultado.GetString("ultima_conexion"));
 
-                    contador += 1;
-                    //abre la conexion y confirma la conexion y contraseña el contador sera 1, si esta repetida te pondra el contado a 2 
-                }
-                if (contador == 1)
-                {
                     this.Hide();
                     Form3 principal = new Form3();
                     principal.ShowDialog();

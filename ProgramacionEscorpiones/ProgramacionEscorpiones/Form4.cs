@@ -80,9 +80,9 @@ namespace ProgramacionEscorpiones
             string confirm = textBox1.Text.ToString();
             if (alias == confirm) 
             {
-                if (textBoxPw.Text == usuario_activo.getPw())
+                if (this.textBoxPw.Text == usuario_activo.getPw())
                 {
-                    sentenciaSQL = "UPDATE usuarios SET alias=" + textBoxNuevoAlias.Text + "where id_usuario=" + usuario_activo.getId() + ";";
+                    sentenciaSQL = "UPDATE sql28127.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + usuario_activo.getId() + "' ;";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
 

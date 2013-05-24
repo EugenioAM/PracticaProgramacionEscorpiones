@@ -16,5 +16,12 @@ namespace ProgramacionEscorpiones
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Form3 principal = new Form3();
+            principal.Show();
+        }
     }
 }
