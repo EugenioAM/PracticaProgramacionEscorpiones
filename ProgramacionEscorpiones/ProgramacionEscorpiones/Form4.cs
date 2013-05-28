@@ -15,7 +15,9 @@ namespace ProgramacionEscorpiones
 {
     public partial class Form4 : Form
     {
-        Usuario usuario_activo = new Usuario();
+
+        RecolectarDatos datos = RecolectarDatos.Instance();
+
         //la linea que guarda la ip del servidor MySql, el usuario y la pass
         String cadenaConexion;
 
@@ -35,7 +37,8 @@ namespace ProgramacionEscorpiones
             InitializeComponent();
             try
             {
-                cadenaConexion = cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306"; 
+                //cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306";
+                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
                 conexion = new MySqlConnection(cadenaConexion);
                 conexion.Open();
             }
@@ -80,11 +83,16 @@ namespace ProgramacionEscorpiones
             string confirm = textBox1.Text.ToString();
             if (alias == confirm) 
             {
-                if (this.textBoxPw.Text == usuario_activo.getPw())
+                if (this.textBoxPw.Text == datos.pw)
                 {
-                    sentenciaSQL = "UPDATE sql28127.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + usuario_activo.getId() + "' ;";
+                    //sentenciaSQL = "UPDATE sql28127.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + usuario_activo.getId() + "' ;";
+                    sentenciaSQL = "UPDATE test.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + datos.id + "' ;";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
+                    this.Close();
+
+                    Form3 principal = new Form3();
+                    principal.Show();
 
                 }
                 else
@@ -105,7 +113,8 @@ namespace ProgramacionEscorpiones
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Close();
+
             Form7 configur = new Form7();
             configur.Show();
         }

@@ -43,7 +43,8 @@ namespace ProgramacionEscorpiones
             InitializeComponent();
             try
             {
-                cadenaConexion = "Server = sql2.freesqldatabase.com; Database = sql28127; Uid = sql28127; Pwd= lI9%vS2*; Port=3306";
+                //cadenaConexion = "Server = sql2.freesqldatabase.com; Database = sql28127; Uid = sql28127; Pwd= lI9%vS2*; Port=3306";
+                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
                 conexion = new MySqlConnection(cadenaConexion);
                 conexion.Open();
 
@@ -100,7 +101,8 @@ namespace ProgramacionEscorpiones
                     //Primero obtengo la clave primaria más alta almacenada en la tabla de jugadores
                     //En id_jugador_maximo guardaré el resultado de la query para saber cuál es el MAX id de jugador en la tabla
                     int id_usuario_maximo = 0;
-                    sentenciaSQL = "Select MAX(id_usuario) from sql28127.usuarios";
+                    //sentenciaSQL = "Select MAX(id_usuario) from sql28127.usuarios";
+                    sentenciaSQL = "Select MAX(id_usuario) from test.usuarios";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
                     if (resultado.Read())
@@ -126,7 +128,8 @@ namespace ProgramacionEscorpiones
              
                      */
 
-                    sentenciaSQL = "INSERT INTO sql28127.usuarios" +
+                    //sentenciaSQL = "INSERT INTO sql28127.usuarios" +
+                    sentenciaSQL = "INSERT INTO test.usuarios" +
                         "(id_usuario, email, pw, alias, hora_alta, fecha_alta, ultima_conexion)" + "VALUES ('"
                                 + id_usuario_maximo + "','"
                                 + textBox4.Text.ToString() + "','"
@@ -171,7 +174,8 @@ namespace ProgramacionEscorpiones
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Hide();//-----------NO TERMINA DE CERRARSE SI LE DAS AL BOTON DE ATRAS!! HAY QUE INVESTIGAR
+            this.Close();
+
             Form1 Index = new Form1();
             Index.Show();
         }

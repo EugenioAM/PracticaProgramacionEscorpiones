@@ -15,7 +15,17 @@ namespace ProgramacionEscorpiones
 {
     public partial class Form1 : Form
     {
-        Usuario usuario_activo = new Usuario();
+
+        //La línea que guarda la IP del servidor MySql, el usuario y la pass
+        String cadenaConexion;
+
+        //Conector que almacena la conexión a la BBDD
+        MySqlConnection conexion;
+
+        //Comando que quiero que se ejecute
+        MySqlCommand comando;
+
+        RecolectarDatos datos = RecolectarDatos.Instance();
 
         public Form1()
         {
@@ -26,9 +36,11 @@ namespace ProgramacionEscorpiones
         {
             try
             {
-                string cadenaConexion = "Server = sql2.freesqldatabase.com; Database = sql28127; Uid = sql28127; Pwd= lI9%vS2*; Port=3306";
-                MySqlConnection conexion = new MySqlConnection(cadenaConexion);
-                MySqlCommand comando = new MySqlCommand("SELECT * from sql28127.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
+                //cadenaConexion = "Server = sql2.freesqldatabase.com; Database = sql28127; Uid = sql28127; Pwd= lI9%vS2*; Port=3306";
+                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
+                conexion = new MySqlConnection(cadenaConexion);
+                //comando = new MySqlCommand("SELECT * from sql28127.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
+                comando = new MySqlCommand("SELECT * from test.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
                 MySqlDataReader resultado;
                 conexion.Open();
                 resultado = comando.ExecuteReader();
@@ -40,18 +52,22 @@ namespace ProgramacionEscorpiones
                 }
                 if (contador == 1)
                 {
-                    usuario_activo.setId(resultado.GetInt32("id_usuario"));
-                    MessageBox.Show(""+usuario_activo.getId());
-                    usuario_activo.setEmail(resultado.GetString("email"));
-                    usuario_activo.setPw(resultado.GetString("pw"));
-                    usuario_activo.setAlias(resultado.GetString("alias"));
-                    usuario_activo.setHora_alta(resultado.GetString("hora_alta"));
-                    usuario_activo.setFecha_alta(resultado.GetString("fecha_alta"));
-                    usuario_activo.setultima_conexion(resultado.GetString("ultima_conexion"));
+                    //int id_usr =  resultado.GetInt32("id_usuario");
+
+
+
+                    datos.id = resultado.GetInt32("id_usuario");
+                    datos.email = resultado.GetString("email");
+                    datos.pw = resultado.GetString("pw");
+                    datos.alias = resultado.GetString("alias");
+                    datos.hora_alta = resultado.GetString("hora_alta");
+                    datos.fecha_alta = resultado.GetString("fecha_alta");
+                    datos.ultima_conexion = resultado.GetString("ultima_conexion");
 
                     this.Hide();
+
                     Form3 principal = new Form3();
-                    principal.ShowDialog();
+                    principal.Show();
                 }
 
                 else if (contador > 1)
@@ -78,10 +94,10 @@ namespace ProgramacionEscorpiones
         private void button2_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
+            this.Close();
             //  MessageBox.Show(""+textBox2.Text.ToString());  Muestra la contraseña, muestra que se oculta la pass pero no cambia de valor
             Form2 Registrar = new Form2();
-            Registrar.ShowDialog();
+            Registrar.Show();
 
 
         }

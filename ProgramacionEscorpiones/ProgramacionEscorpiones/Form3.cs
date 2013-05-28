@@ -12,18 +12,19 @@ namespace ProgramacionEscorpiones
 {
     public partial class Form3 : Form
     {
-        Usuario usuario_activo = new Usuario();
+        RecolectarDatos datos = RecolectarDatos.Instance();
 
         public Form3()
         {
             InitializeComponent();
-            usuario_activo.setId(22);
+         
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //acceso ventana configuracion
-            Hide();
+            this.Close();
+
             Form7 Registrar = new Form7();
             Registrar.Show();
         }
@@ -31,30 +32,10 @@ namespace ProgramacionEscorpiones
         private void button2_Click(object sender, EventArgs e)
         {
             //boton añadir autor
-            Hide();
+            this.Close();
+
             Form8 Registrar = new Form8();
             Registrar.Show();
         }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            //ventana añadir autor
-            Hide();
-            Form8 Registrar = new Form8();
-            Registrar.Show();
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            Hide();
-            Form7 Registrar = new Form7();
-            Registrar.Show();
-        }
-
-
-        
-        
-        
-        
     }
 }

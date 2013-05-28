@@ -14,8 +14,10 @@ using MySql.Data.MySqlClient;
 namespace ProgramacionEscorpiones
 {
     public partial class Form5 : Form
-    {   
-        Usuario usuario_activo = new Usuario();
+    {
+
+        RecolectarDatos datos = RecolectarDatos.Instance();
+
         //la linea que guarda la ip del servidor MySql, el usuario y la pass
         String cadenaConexion;
 
@@ -36,9 +38,14 @@ namespace ProgramacionEscorpiones
             InitializeComponent();
             try
             {
-                cadenaConexion = cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306"; 
+                //cadenaConexion = cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306"; 
+                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
                 conexion = new MySqlConnection(cadenaConexion);
                 conexion.Open();
+                this.Close();
+
+                Form3 principal = new Form3();
+                principal.Show();
             }
             catch (Exception)
             {
@@ -47,7 +54,8 @@ namespace ProgramacionEscorpiones
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Close();
+
             Form7 configuracion = new Form7();
             configuracion.Show();
         }
@@ -68,9 +76,10 @@ namespace ProgramacionEscorpiones
             string correo2 = textBox3.Text.ToString();
             if (correo1 == correo2)
             {
-                if (textBox1.Text == usuario_activo.getemail())
+                if (textBox1.Text == datos.email)
                 {
-                    sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + usuario_activo.getemail() + ";";
+                    //sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + usuario_activo.getemail() + ";";
+                    sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + datos.email + ";";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
 
@@ -86,9 +95,7 @@ namespace ProgramacionEscorpiones
                 MessageBox.Show("Comprobar correo");
             }
         }
-                
 
-        
 
         private void textBox1_Click(object sender, EventArgs e)
         {

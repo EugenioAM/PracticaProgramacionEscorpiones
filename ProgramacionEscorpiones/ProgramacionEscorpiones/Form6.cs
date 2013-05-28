@@ -19,7 +19,8 @@ namespace ProgramacionEscorpiones
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Hide();
+            this.Close();
+
             Form7 configur = new Form7();
             configur.Show();
         }

@@ -46,31 +46,31 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 160);
+            this.textBox1.Location = new System.Drawing.Point(40, 108);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(206, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "ANTIGUO-PASS";
+            this.textBox1.Text = "NUEVA PASSWORD";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(40, 108);
+            this.textBox2.Location = new System.Drawing.Point(40, 134);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(206, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "NUEVO PASS";
+            this.textBox2.Text = "REPETIR PASSWORD";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(40, 134);
+            this.textBox3.Location = new System.Drawing.Point(40, 160);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(206, 20);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "REPETIR-PASS";
+            this.textBox3.Text = "VIEJA PASSWORD";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             // 
