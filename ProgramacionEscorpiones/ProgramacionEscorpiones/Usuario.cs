@@ -8,22 +8,22 @@ namespace ProgramacionEscorpiones
 {
 
 
-    public class RecolectarDatos
+    public class Usuario_Activo
     {
-        private static RecolectarDatos datos;
+        private static Usuario_Activo usuario_activo;
 
-        private RecolectarDatos()
+        private Usuario_Activo()
         {
         }
 
-        public static RecolectarDatos Instance()
+        public static Usuario_Activo Instance()
         {
-            if (datos == null)
+            if (usuario_activo == null)
             {
-                datos = new RecolectarDatos();
+                usuario_activo = new Usuario_Activo();
             }
 
-            return datos;
+            return usuario_activo;
         }
 
         public int id { get; set; }

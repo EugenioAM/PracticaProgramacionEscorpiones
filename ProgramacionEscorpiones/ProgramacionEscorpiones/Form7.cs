@@ -29,8 +29,8 @@ namespace ProgramacionEscorpiones
         {
             // botón cambiar pass
             Hide();
-            Form6 Registrar = new Form6();
-            Registrar.Show();
+            Form6 pass = new Form6();
+            pass.Show();
 
         }
 
@@ -38,8 +38,8 @@ namespace ProgramacionEscorpiones
         {
             //botón cambiar mail
             Hide();
-            Form5 Registrar = new Form5();
-            Registrar.Show();
+            Form5 email = new Form5();
+            email.Show();
 
         }
 

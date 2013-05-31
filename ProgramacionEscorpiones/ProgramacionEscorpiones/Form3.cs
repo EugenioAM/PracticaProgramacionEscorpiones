@@ -12,12 +12,14 @@ namespace ProgramacionEscorpiones
 {
     public partial class Form3 : Form
     {
-        RecolectarDatos datos = RecolectarDatos.Instance();
+        Usuario_Activo usuario_activo = Usuario_Activo.Instance();
+        Twit_Actual twit_actual = Twit_Actual.Instance();
+        Autor autor_twit = Autor.Instance();
 
         public Form3()
         {
             InitializeComponent();
-         
+
         }
 
         private void button3_Click(object sender, EventArgs e)

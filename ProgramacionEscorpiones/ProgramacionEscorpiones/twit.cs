@@ -7,60 +7,30 @@ using System.Threading.Tasks;
 
 namespace ProgramacionEscorpiones
 {
-    class Twit
+    public class Twit_Actual
     {
-        int id_twit, id_autor;
-        string contenido, fecha;
+        private static Twit_Actual twit_actual;
 
-        public Twit() { }
-
-        public Twit(int id_autor, string contenido)
+        private Twit_Actual()
         {
-
-            this.id_autor = id_autor;
-            this.contenido = contenido;
-        }
-        //id_autor
-        public int getId_autor()
-        {
-            return this.id_autor;
         }
 
-        public void setId_autor(int id_autor)
+        public static Twit_Actual Instance()
         {
-            this.id_autor = id_autor;
-        }
-        //id_twit
-        public int getid_twit()
-        {
-            return this.id_twit;
+            if (twit_actual == null)
+            {
+                twit_actual = new Twit_Actual();
+            }
+
+            return twit_actual;
         }
 
-        public void setid_twit(int id_twit)
-        {
-            this.id_twit = id_twit;
-        }
-        //fecha
-        public string getfecha()
-        {
-            return this.fecha;
-        }
-
-        public void setfecha(string fecha)
-        {
-            this.fecha = fecha;
-        }
-
-        //contenido
-        public string getcontenido()
-        {
-            return this.contenido;
-        }
-
-        public void setcontenido(string contenido)
-        {
-            this.contenido = contenido;
-        }
+        public int id_twit { get; set; }
+        public int id_autor { get; set; }
+        public string contenido { get; set; }
+        public string fecha_twit{ get; set; }
+        public string hora_twit { get; set; }
+        
 
     }
 }

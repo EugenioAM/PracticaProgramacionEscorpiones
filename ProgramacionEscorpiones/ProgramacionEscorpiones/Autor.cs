@@ -6,61 +6,29 @@ using System.Threading.Tasks;
 
 namespace ProgramacionEscorpiones
 {
-    class Autor
+    public class Autor
     {
-        int id_autor;
-        string nombre, url, fecha_publicacion;
+        private static Autor autor_twit;
 
-        public Autor() { }
-
-        public Autor(string url)
+        private Autor()
         {
-
-            this.url = url;
-
-
         }
 
-        // url
-        public void SetUrl(string url)
+        public static Autor Instance()
         {
+            if (autor_twit == null)
+            {
+                autor_twit = new Autor();
+            }
 
-            this.url = url;
-
-
+            return autor_twit;
         }
-        public string getUrl()
-        {
 
-            return this.url;
-
-        }
-        public void SetNombre(string url)
-        {
-
-            this.nombre = nombre;
+        public int id_autor { get; set; }
+        public string nombre { get; set; }
+        public string url_autor { get; set; }
+        public string fecha_alta_autor { get; set; }
 
 
-        }
-        public string getNombre()
-        {
-
-            return this.nombre;
-
-
-        }
-        public void Setfecha_publicacion(string url)
-        {
-
-            this.fecha_publicacion = fecha_publicacion;
-
-
-        }
-        public string getfecha_publicacion()
-        {
-
-            return this.fecha_publicacion;
-
-        }
     }
 }

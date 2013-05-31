@@ -16,7 +16,7 @@ namespace ProgramacionEscorpiones
     public partial class Form5 : Form
     {
 
-        RecolectarDatos datos = RecolectarDatos.Instance();
+        Usuario_Activo usuario_activo = Usuario_Activo.Instance();
 
         //la linea que guarda la ip del servidor MySql, el usuario y la pass
         String cadenaConexion;
@@ -38,11 +38,11 @@ namespace ProgramacionEscorpiones
             InitializeComponent();
             try
             {
-                //cadenaConexion = cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306"; 
-                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
+                cadenaConexion = cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306"; 
+               // cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
                 conexion = new MySqlConnection(cadenaConexion);
                 conexion.Open();
-                this.Close();
+               // this.Close();
 
                 Form3 principal = new Form3();
                 principal.Show();
@@ -76,10 +76,10 @@ namespace ProgramacionEscorpiones
             string correo2 = textBox3.Text.ToString();
             if (correo1 == correo2)
             {
-                if (textBox1.Text == datos.email)
+                if (textBox1.Text == usuario_activo.email)
                 {
-                    //sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + usuario_activo.getemail() + ";";
-                    sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + datos.email + ";";
+                    sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + usuario_activo.email + ";";
+                    //sentenciaSQL = "UPDATE usuarios SET email=" + textBox1 + "WHERE id_usuario =" + datos.email + ";";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
 

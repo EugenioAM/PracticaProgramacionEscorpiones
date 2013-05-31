@@ -16,7 +16,7 @@ namespace ProgramacionEscorpiones
     public partial class Form4 : Form
     {
 
-        RecolectarDatos datos = RecolectarDatos.Instance();
+        Usuario_Activo usuario_activo = Usuario_Activo.Instance();
 
         //la linea que guarda la ip del servidor MySql, el usuario y la pass
         String cadenaConexion;
@@ -37,8 +37,8 @@ namespace ProgramacionEscorpiones
             InitializeComponent();
             try
             {
-                //cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306";
-                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
+                cadenaConexion = "Server = sql2.freesqldatabase.com ; Database = sql28127; Uid = sql28127; Pwd = lI9%vS2*; Port = 3306";
+               // cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
                 conexion = new MySqlConnection(cadenaConexion);
                 conexion.Open();
             }
@@ -57,14 +57,8 @@ namespace ProgramacionEscorpiones
 
         private void textBox2_click(object sender, EventArgs e)
         {
-            //textBoxNuevoAlias.Text = "";
-            //sentenciaSQL = "UPDATE usuarios SET pw=" + textBoxPw.Text +"where id_usuario=" + usuario_activo.getId() +";";
+           
 
-            //comando = new MySqlCommand(sentenciaSQL, conexion);
-            //resultado = comando.ExecuteReader();
-
-
-          
 
             // Se pone a blancos
             textBoxPw.Text = "";
@@ -83,10 +77,10 @@ namespace ProgramacionEscorpiones
             string confirm = textBox1.Text.ToString();
             if (alias == confirm) 
             {
-                if (this.textBoxPw.Text == datos.pw)
+                if (this.textBoxPw.Text == usuario_activo.pw)
                 {
-                    //sentenciaSQL = "UPDATE sql28127.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + usuario_activo.getId() + "' ;";
-                    sentenciaSQL = "UPDATE test.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + datos.id + "' ;";
+                    sentenciaSQL = "UPDATE sql28127.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
+                    // sentenciaSQL = "UPDATE test.usuarios SET alias='" + this.textBoxNuevoAlias.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
                     this.Close();

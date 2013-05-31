@@ -25,7 +25,7 @@ namespace ProgramacionEscorpiones
         //Comando que quiero que se ejecute
         MySqlCommand comando;
 
-        RecolectarDatos datos = RecolectarDatos.Instance();
+        Usuario_Activo datos = Usuario_Activo.Instance();
 
         public Form1()
         {
@@ -36,11 +36,11 @@ namespace ProgramacionEscorpiones
         {
             try
             {
-                //cadenaConexion = "Server = sql2.freesqldatabase.com; Database = sql28127; Uid = sql28127; Pwd= lI9%vS2*; Port=3306";
-                cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
+                cadenaConexion = "Server = sql2.freesqldatabase.com; Database = sql28127; Uid = sql28127; Pwd= lI9%vS2*; Port=3306";
+                //cadenaConexion = "Server = localhost; Database = liga; Uid = root; Pwd = ; Port = 3306;";
                 conexion = new MySqlConnection(cadenaConexion);
-                //comando = new MySqlCommand("SELECT * from sql28127.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
-                comando = new MySqlCommand("SELECT * from test.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
+                comando = new MySqlCommand("SELECT * from sql28127.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
+               // comando = new MySqlCommand("SELECT * from test.usuarios WHERE alias='" + this.textBox1.Text + "' AND pw='" + this.textBox2.Text + "'; ", conexion);
                 MySqlDataReader resultado;
                 conexion.Open();
                 resultado = comando.ExecuteReader();
@@ -52,7 +52,7 @@ namespace ProgramacionEscorpiones
                 }
                 if (contador == 1)
                 {
-                    //int id_usr =  resultado.GetInt32("id_usuario");
+                    int id_usr =  resultado.GetInt32("id_usuario");
 
 
 
