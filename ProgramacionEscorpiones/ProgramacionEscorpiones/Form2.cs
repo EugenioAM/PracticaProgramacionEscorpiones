@@ -55,16 +55,16 @@ namespace ProgramacionEscorpiones
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("No se puede conectar al servidor.  Contactar al administrador");
+                        MessageBox.Show("No se puede conectar al servidor","Contactar al administrador");
                         break;
 
                     case 1045:
-                        MessageBox.Show("Nombre/contraseña incorrecta, intente de nuevo");
+                        MessageBox.Show("Nombre/contraseña incorrecta","Intente de nuevo");
                         break;
                 }
 
             }
-
+            
 
         }
 
@@ -74,11 +74,21 @@ namespace ProgramacionEscorpiones
         }
         private void textBox2_Click(object sender, EventArgs e)
         {
+            // Se pone a blancos
             textBox2.Text = "";
+            // Se muestra el texto escrito como asteriscos
+            textBox2.PasswordChar = '•';
+            // Dejara un maximo de 30 caracteres al igual que la BBDD
+            textBox2.MaxLength = 30;
         }
         private void textBox3_Click(object sender, EventArgs e)
         {
+            // Se pone a blancos
             textBox3.Text = "";
+            // Se muestra el texto escrito como asteriscos
+            textBox3.PasswordChar = '•';
+            // Dejara un maximo de 30 caracteres al igual que la BBDD
+            textBox3.MaxLength = 30;
         }
         private void textBox4_Click(object sender, EventArgs e)
         {
@@ -95,14 +105,12 @@ namespace ProgramacionEscorpiones
             {
                 if (util.IsValidEmail(textBox4.Text.ToString()))
                 {
-                    MessageBox.Show("Datos Validos");
-
 
                     //Primero obtengo la clave primaria más alta almacenada en la tabla de jugadores
                     //En id_jugador_maximo guardaré el resultado de la query para saber cuál es el MAX id de jugador en la tabla
                     int id_usuario_maximo = 0;
                     sentenciaSQL = "Select MAX(id_usuario) from sql28127.usuarios";
-                  //  sentenciaSQL = "Select MAX(id_usuario) from test.usuarios";
+                    //  sentenciaSQL = "Select MAX(id_usuario) from test.usuarios";
                     comando = new MySqlCommand(sentenciaSQL, conexion);
                     resultado = comando.ExecuteReader();
                     if (resultado.Read())
@@ -129,7 +137,7 @@ namespace ProgramacionEscorpiones
                      */
 
                     sentenciaSQL = "INSERT INTO sql28127.usuarios" +
-                    //sentenciaSQL = "INSERT INTO test.usuarios" +
+                        //sentenciaSQL = "INSERT INTO test.usuarios" +
                         "(id_usuario, email, pw, alias, hora_alta, fecha_alta, ultima_conexion)" + "VALUES ('"
                                 + id_usuario_maximo + "','"
                                 + textBox4.Text.ToString() + "','"
@@ -144,6 +152,12 @@ namespace ProgramacionEscorpiones
                     try
                     {
                         comando.ExecuteNonQuery();
+                        MessageBox.Show("Ingreso completado", "Aceptado");
+
+                        this.Close();
+
+                        Form1 index = new Form1();
+                        index.Show();
                     }
 
                     catch (MySqlException ex)
@@ -151,24 +165,24 @@ namespace ProgramacionEscorpiones
                         switch (ex.Number)
                         {
                             case 1062:
-                                MessageBox.Show("Alias o Email EN USO");
+                                MessageBox.Show("Alias o Email EN USO","ERROR");
                                 break;
                             default:
-                                MessageBox.Show(ex.ToString());/*para poder controlar los errores asi veo como salen*/
+                                MessageBox.Show(ex.ToString(),"AVISAR A LOS GURUS DEL PROGRAMA");/*para poder controlar los errores asi veo como salen*/
                                 break;
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Correo Invalido");
+                    MessageBox.Show("Correo Invalido","ERROR");
                 }
 
             }
             else
             {
 
-                MessageBox.Show("Contraseñas diferentes");
+                MessageBox.Show("Contraseñas diferentes","ERROR");
             }
         }
 
@@ -186,7 +200,7 @@ namespace ProgramacionEscorpiones
             Application.Exit();
         }
 
-     
+
 
     }
 }

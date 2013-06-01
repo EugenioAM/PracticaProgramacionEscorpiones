@@ -72,34 +72,48 @@ namespace ProgramacionEscorpiones
                 {
                     if (util.IsValidEmail(textBox1.Text.ToString()))
                     {
-                        if (this.textBox1.Text.ToString() == usuario_activo.email)
-                        {
+                        
                             sentenciaSQL = "UPDATE sql28127.usuarios SET email='" + this.textBox1.Text + "' WHERE id_usuario = '" + usuario_activo.id + "' ;";
                             //sentenciaSQL = "UPDATE liga.usuarios SET email='"  + this.textBox1.Text +  "' WHERE id_usuario = '" + usuario_activo.id + "' ;";
                             comando = new MySqlCommand(sentenciaSQL, conexion);
-                            resultado = comando.ExecuteReader();
-                            this.Close();
 
-                            Form3 principal = new Form3();
-                            principal.Show();
+                            try
+                            {
+                                resultado = comando.ExecuteReader();
+                                MessageBox.Show("Cambio completado", "Aceptado");
+                                this.Close();
 
-                        }
+                                Form3 principal = new Form3();
+                                principal.Show();
+                            }
+                            catch (MySqlException ex)
+                            {
+                                switch (ex.Number)
+                                {
+                                    case 1062:
+                                        MessageBox.Show("Email EN USO","ERROR");
+                                        break;
+                                    default:
+                                        MessageBox.Show(ex.ToString(),"AVISAR A LOS GURUS DEL PROGRAMA");/*para poder controlar los errores asi veo como salen*/
+                                        break;
+                                }
+                            }
                     }
                     else
                     {
-                        MessageBox.Show("Este email es erroneo");
+                        MessageBox.Show("Este email es erroneo","ERROR");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña erronea");
+                    MessageBox.Show("Contraseña erronea","ERROR");
                 }
 
             }
 
             else
             {
-                MessageBox.Show("Igualar email");
+                MessageBox.Show("Igualar email","ERROR");
             }
         }
 

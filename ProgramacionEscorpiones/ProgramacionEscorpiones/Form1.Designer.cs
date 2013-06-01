@@ -42,7 +42,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "usuario";
+            this.textBox1.Text = "Usuario";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
@@ -52,7 +52,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(209, 20);
             this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "password";
+            this.textBox2.Text = "Contraseña";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 

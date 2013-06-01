@@ -37,41 +37,41 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(84, 213);
+            this.button1.Location = new System.Drawing.Point(84, 170);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "CAMBIAR";
+            this.button1.Text = "Cambiar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 134);
+            this.textBox1.Location = new System.Drawing.Point(40, 91);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(206, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "NUEVA PASSWORD";
+            this.textBox1.Text = "Nueva Contraseña";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(40, 160);
+            this.textBox2.Location = new System.Drawing.Point(40, 117);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(206, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "REPETIR PASSWORD";
+            this.textBox2.Text = "Repetir Contraseña";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(40, 108);
+            this.textBox3.Location = new System.Drawing.Point(40, 65);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(206, 20);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "VIEJA PASSWORD";
+            this.textBox3.Text = "Vieja Contraseña";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             // 
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(284, 226);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);

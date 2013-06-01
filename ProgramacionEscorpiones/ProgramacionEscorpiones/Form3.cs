@@ -19,6 +19,8 @@ namespace ProgramacionEscorpiones
         public Form3()
         {
             InitializeComponent();
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Text="Bienvenido "+usuario_activo.alias;
 
         }
 

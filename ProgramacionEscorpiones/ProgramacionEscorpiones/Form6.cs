@@ -94,19 +94,28 @@ namespace ProgramacionEscorpiones
             string confirm = textBox2.Text.ToString();
             if (pwss == confirm)
             {
-                sentenciaSQL = "UPDATE sql28127.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
-                // sentenciaSQL = "UPDATE test.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
-                comando = new MySqlCommand(sentenciaSQL, conexion);
-                resultado = comando.ExecuteReader();
-                this.Close();
+                if (this.textBox3.Text.ToString() == usuario_activo.pw)
+                {
+                    sentenciaSQL = "UPDATE sql28127.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
+                    // sentenciaSQL = "UPDATE test.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
+                    comando = new MySqlCommand(sentenciaSQL, conexion);
+                    resultado = comando.ExecuteReader();
+                    MessageBox.Show("Cambio completado", "Aceptado");
+                    this.Close();
 
-                Form3 principal = new Form3();
-                principal.Show();
+                    Form3 principal = new Form3();
+                    principal.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Tercer campo \"Repetir Contraseña\" erroneo", "ERROR");
+                }
 
             }
             else
             {
-                MessageBox.Show("Comprobar Alias");
+                MessageBox.Show("Igualar Contraseñas", "ERROR");
             }
         }
     }

@@ -44,7 +44,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "alias";
+            this.textBox1.Text = "Alias";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
@@ -54,7 +54,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(209, 20);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "password";
+            this.textBox2.Text = "Contraseña";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             // 
@@ -64,7 +64,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(209, 20);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "confirmar password";
+            this.textBox3.Text = "Confirmar Contraseña";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
             // 
@@ -74,7 +74,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(209, 20);
             this.textBox4.TabIndex = 4;
-            this.textBox4.Text = "e-mail";
+            this.textBox4.Text = "E-Mail";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
             // 
