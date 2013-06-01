@@ -94,7 +94,7 @@ namespace ProgramacionEscorpiones
         private void button2_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            this.Hide();
             //  MessageBox.Show(""+textBox2.Text.ToString());  Muestra la contraseña, muestra que se oculta la pass pero no cambia de valor
             Form2 Registrar = new Form2();
             Registrar.Show();
@@ -127,7 +127,7 @@ namespace ProgramacionEscorpiones
         }
 
 
-
+       
 
     }
 }

@@ -83,7 +83,7 @@ namespace ProgramacionEscorpiones
 
             this.Close();
 
-            Form3 configur = new Form3();
+            Form7 configur = new Form7();
             configur.Show();
         }
 
@@ -94,22 +94,14 @@ namespace ProgramacionEscorpiones
             string confirm = textBox2.Text.ToString();
             if (pwss == confirm)
             {
-                if (this.textBox3.Text == usuario_activo.pw)
-                {
-                    sentenciaSQL = "UPDATE sql28127.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
-                    // sentenciaSQL = "UPDATE test.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
-                    comando = new MySqlCommand(sentenciaSQL, conexion);
-                    resultado = comando.ExecuteReader();
-                    this.Close();
+                sentenciaSQL = "UPDATE sql28127.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
+                // sentenciaSQL = "UPDATE test.usuarios SET pw='" + this.textBox2.Text + "' where id_usuario= '" + usuario_activo.id + "' ;";
+                comando = new MySqlCommand(sentenciaSQL, conexion);
+                resultado = comando.ExecuteReader();
+                this.Close();
 
-                    Form3 principal = new Form3 ();
-                    principal.Show();
-
-                }
-                else
-                {
-                    MessageBox.Show("Este Alias ya Existe");
-                }
+                Form3 principal = new Form3();
+                principal.Show();
 
             }
             else
